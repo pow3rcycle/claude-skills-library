@@ -1,0 +1,622 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-19T19:35:59.312Z",
+  "catalog": {
+    "name": "claude-skills-library",
+    "url": "https://github.com/pow3rcycle/claude-skills-library"
+  },
+  "skills": [
+    {
+      "id": "agent-browser",
+      "displayName": "Agent Browser",
+      "description": "Browser automation CLI for AI agents — navigate, click, fill forms, screenshot, extract data, test web apps and Electron apps. Use for any programmatic browser interaction or visual verification task; prefer over built-in browser automation.",
+      "longDescription": "Fast browser automation CLI for AI agents. Chrome/Chromium via CDP with accessibility-tree snapshots and compact `@eN` element refs.",
+      "category": "utility",
+      "version": "1.0.0",
+      "dirHash": "sha256:ab5d8754808399ca12634426047954a313c094b4fa32c58ba1ac699464995e4b",
+      "sizeBytes": 2682,
+      "fileCount": 1,
+      "license": "Apache-2.0",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/vercel-labs/agent-browser",
+        "author": "Vercel Labs"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [
+          "agent-browser"
+        ],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/agent-browser"
+    },
+    {
+      "id": "apply-richformat",
+      "displayName": "Apply Richformat",
+      "description": "Rich formatting for any text-bearing surface — app screens, documents, reports, READMEs, chat answers, terminal output, data tables. Use on walls of undifferentiated text, when building or reviewing such a surface, or when the user says \"rich formatting\", \"text vomit\", \"needs better structure\", \"make this readable\".",
+      "longDescription": "The same review note comes back on project after project, in the same words: *\"it looks like someone vomited text\"*, *\"needs richer formatting and proper UI separation\"*. This skill exists so nobody has to ask for it.",
+      "category": "engineering",
+      "version": "1.0.0",
+      "dirHash": "sha256:b7246896085285cc0e1b6cbb8a2d3da0a159f9827b8c9b9034cf034c962bee64",
+      "sizeBytes": 7892,
+      "fileCount": 1,
+      "license": "Shared",
+      "source": {
+        "type": "first-party",
+        "url": "https://github.com/pow3rcycle/claude-skills-library",
+        "author": ""
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/apply-richformat"
+    },
+    {
+      "id": "brandkit",
+      "displayName": "Brandkit",
+      "description": "Premium brand-kit image generation — brand-guideline boards, logo systems, identity decks, and visual-world presentations with intentional logo concepting and refined composition.",
+      "longDescription": "You are an elite brand identity art director, logo designer, visual-system strategist, and presentation designer.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:54e8001191bd3ce978a0c49530aece7505699e99b1602bfd3ed0b67d859270e6",
+      "sizeBytes": 16774,
+      "fileCount": 2,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/brandkit"
+    },
+    {
+      "id": "commissioning-logger",
+      "displayName": "Commissioning Logger",
+      "description": "Use ONLY when explicitly asked to log/document/track a multi-step hands-on process (commissioning, wiring, network bring-up, setup, troubleshooting, runbooks) — \"log this\", \"start a commissioning log\", \"write it up as we go\". Keeps a log.md plus a Word doc with annotated screenshots.",
+      "longDescription": "Maintain ONE authoritative, growing record of how something was done, so the finished document is a repeatable \"how we did it\" another person could follow. Works for any subject — not tied to one machine, vendor, or industry.",
+      "category": "engineering",
+      "version": "1.0.0",
+      "dirHash": "sha256:cc329e7bcee4e99fc9f580a364f02c991ac03cc7ef4bce4b3ed45a7628cdf640",
+      "sizeBytes": 23115,
+      "fileCount": 5,
+      "license": "Shared",
+      "source": {
+        "type": "first-party",
+        "url": "https://github.com/pow3rcycle/claude-skills-library",
+        "author": ""
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": "Runs npm install in its scripts/ folder on first use; needs Node. The screenshot annotator needs Python with Pillow."
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/commissioning-logger"
+    },
+    {
+      "id": "defuddle",
+      "displayName": "Defuddle",
+      "description": "Extract clean markdown from web pages with the Defuddle CLI — use instead of WebFetch for articles, docs, and blog posts to save tokens. Not for URLs ending in .md (use WebFetch).",
+      "longDescription": "Use Defuddle CLI to extract clean readable content from web pages. Prefer over WebFetch for standard web pages — it removes navigation, ads, and clutter, reducing token usage.",
+      "category": "utility",
+      "version": "1.0.0",
+      "dirHash": "sha256:7e524bfa56ee8862813efe9505a36aab1a2c159b9cba2098578e8390659e755a",
+      "sizeBytes": 955,
+      "fileCount": 1,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/kepano/obsidian-skills",
+        "author": "kepano"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [
+          "defuddle"
+        ],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/defuddle"
+    },
+    {
+      "id": "design-motion-principles",
+      "displayName": "Design Motion Principles",
+      "description": "Motion and interaction design expert — build UI motion with purpose or audit existing animations for AI-slop patterns (audit emits an HTML report). Use when creating, adding, or reviewing transitions, hover states, micro-interactions, or any animation in React, Framer Motion, CSS, or HTML.",
+      "longDescription": "You are a senior design engineer specializing in motion and interaction design. This skill operates in two modes:",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:eeddd4d101454f02a76c67476a213b0c12cb9ee07480d0602e00f66277d3e36f",
+      "sizeBytes": 176961,
+      "fileCount": 16,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/kylezantos/design-motion-principles",
+        "author": "Kyle Zantos"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/design-motion-principles"
+    },
+    {
+      "id": "design-taste-frontend",
+      "displayName": "Design Taste Frontend",
+      "description": "Anti-slop frontend skill for landing pages, portfolios, and redesigns — infers the right design direction from the brief, audit-first on redesigns, strict pre-flight check; ships interfaces that don't look templated.",
+      "longDescription": "Before touching code or tweaking dials, **infer what the user actually wants**. Most LLM design output is bad because the model jumps to a default aesthetic instead of reading the room.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:18e5ab7ae5fad8495268b1033822c554a6ddc90fdb054fd040488f081c0a367f",
+      "sizeBytes": 95093,
+      "fileCount": 7,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/design-taste-frontend"
+    },
+    {
+      "id": "full-output-enforcement",
+      "displayName": "Full Output Enforcement",
+      "description": "Enforces complete, unabridged code output — bans placeholder patterns and truncation, handles token-limit splits cleanly. Apply to any task requiring exhaustive output.",
+      "longDescription": "Treat every task as production-critical. A partial output is a broken output. Do not optimize for brevity — optimize for completeness. If the user asks for a full file, deliver the full file. If the user asks for 5 components, deliver 5 components. No exceptions.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:e39ba41a5dda1960906dd9de69c546510931a9886631ce26cdfcad3b0c81e7fb",
+      "sizeBytes": 3624,
+      "fileCount": 2,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/full-output-enforcement"
+    },
+    {
+      "id": "gpt-taste",
+      "displayName": "Gpt Taste",
+      "description": "Elite UX/UI and advanced GSAP motion engineering — randomized layout variance, AIDA structure, wide editorial typography, gapless bento grids, strict ScrollTriggers, massive section spacing.",
+      "longDescription": "You are an elite, award-winning frontend design engineer. Standard LLMs possess severe statistical biases: they generate massive 6-line wrapped headings by using narrow containers, leave ugly empty gaps in bento grids, use cheap meta-labels (\"QUESTION 05\", \"SECTION 01\"), output invisible button text, and endlessly repeat the same Left/Right layouts.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:6f6490f2a68ae5c6d6caec46d15a457a2409e9aad236b9cb2ba69de5f5433d24",
+      "sizeBytes": 10475,
+      "fileCount": 2,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/gpt-taste"
+    },
+    {
+      "id": "high-end-visual-design",
+      "displayName": "High End Visual Design",
+      "description": "High-end agency design standards — the exact fonts, spacing, shadows, card structures, and animations that make a site feel expensive; blocks the defaults that make AI designs look cheap.",
+      "longDescription": "- **Persona:** `Vanguard_UI_Architect` - **Objective:** You engineer $150k+ agency-level digital experiences, not just websites. Your output must exude haptic depth, cinematic spatial rhythm, obsessive micro-interactions, and flawless fluid motion. - **The Variance Mandate:** NEVER generate the exact same layout or aesthetic twice in a row. You must dynamically combine different premium layout archetypes and texture profiles while strictly adhering to the elite \"Apple-esque / Linear-tier\" design language.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:c9631503d11d1aaba67d1331c653a08d19d515fe7ba76066164bf9366cd5b331",
+      "sizeBytes": 13039,
+      "fileCount": 2,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/high-end-visual-design"
+    },
+    {
+      "id": "image-to-code",
+      "displayName": "Image To Code",
+      "description": "For visually important web tasks: generate the design image(s) first, deeply analyze them, then implement the website to match as closely as possible — large section-specific images, clean spacious hero.",
+      "longDescription": "You are an elite web design art director and implementation strategist.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:8ee649f37bc2f163d564c0aa4fd3b8045ed75775d91fd712644676adbb6d2b8e",
+      "sizeBytes": 34943,
+      "fileCount": 2,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/image-to-code"
+    },
+    {
+      "id": "imagegen-frontend-mobile",
+      "displayName": "Imagegen Frontend Mobile",
+      "description": "Generate premium mobile app screen concepts and flows (iOS/Android) shown in subtle phone mockups — clean hierarchy, readable text, multi-screen consistency. Image generation only; writes no code.",
+      "longDescription": "You are an elite mobile product design art director.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:219c138e431e7e48c78ea2dec4abb23859ce045840146a9e1efabf7bad071d47",
+      "sizeBytes": 42189,
+      "fileCount": 2,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [
+        "imagegen-shared"
+      ],
+      "path": "catalog/imagegen-frontend-mobile"
+    },
+    {
+      "id": "imagegen-frontend-web",
+      "displayName": "Imagegen Frontend Web",
+      "description": "Generate premium website design-reference images for landing pages and marketing sites — ONE separate horizontal image per page section, single consistent palette, varied composition, built for accurate developer recreation.",
+      "longDescription": "**Generate one separate horizontal image PER section. Always. No exceptions.**",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:87661e783041cfaafc883515031f4cb167b021a8d5b67439e9d41222f20531ca",
+      "sizeBytes": 32253,
+      "fileCount": 2,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [
+        "imagegen-shared"
+      ],
+      "path": "catalog/imagegen-frontend-web"
+    },
+    {
+      "id": "imagegen-shared",
+      "displayName": "Imagegen Shared",
+      "description": "Shared reference assets for the imagegen skills",
+      "longDescription": "Shared reference assets for the imagegen skills: the anti-slop taxonomy and the combinatorial variation engine, read by image-to-code, imagegen-frontend-web and imagegen-frontend-mobile.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:0e219e56d3a306f42b5c58274764cd0102947f4d8ca47fd8f08560bd2c8ab066",
+      "sizeBytes": 13101,
+      "fileCount": 3,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": true,
+      "dependsOn": [],
+      "path": "catalog/imagegen-shared"
+    },
+    {
+      "id": "impeccable",
+      "displayName": "Impeccable",
+      "description": "Design-system craft skill for any frontend UI work — design, redesign, audit, polish, critique, harden, or animate websites, dashboards, product UI, and components; covers hierarchy, spacing, typography, color, motion, accessibility, UX copy, and design tokens. Not for backend-only tasks.",
+      "longDescription": "Designs and iterates production-grade frontend interfaces. Real working code, committed design choices, exceptional craft.",
+      "category": "design",
+      "version": "3.9.1",
+      "dirHash": "sha256:55a3f4658d442b615c706ea3d6885fd36c6d41c9724f58342997bf0be8b6e40c",
+      "sizeBytes": 2280533,
+      "fileCount": 109,
+      "license": "Apache-2.0",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/pbakaus/impeccable",
+        "author": "Paul Bakaus (pbakaus)"
+      },
+      "requires": {
+        "bins": [
+          "node"
+        ],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/impeccable"
+    },
+    {
+      "id": "industrial-brutalist-ui",
+      "displayName": "Industrial Brutalist Ui",
+      "description": "Raw mechanical brutalist interfaces fusing Swiss typographic print with military terminal aesthetics — rigid grids, extreme type-scale contrast, utilitarian color, analog degradation. For data-heavy dashboards, portfolios, or editorial sites that should feel like declassified blueprints.",
+      "longDescription": "**Name:** Industrial Brutalism & Tactical Telemetry Interface Engineering **Description:** Advanced proficiency in architecting web interfaces that synthesize mid-century Swiss Typographic design, industrial manufacturing manuals, and retro-futuristic aerospace/military terminal interfaces. This discipline requires absolute mastery over rigid modular grids, extreme typographic scale contrast, purely utilitarian color palettes, and the programmatic simulation of analog degradation (halftones, CRT scanlines, bitmap dithering). The objective is to construct digital environments that project raw functionality, mechanical precision, and high data density, deliberately discarding conventional consumer UI patterns.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:361998c652328aa99d8990c17031c6e45487248b2e1a5f6cd40faa21b4f2bc39",
+      "sizeBytes": 10035,
+      "fileCount": 2,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/industrial-brutalist-ui"
+    },
+    {
+      "id": "last30days",
+      "displayName": "Last30days",
+      "description": "ONLY for explicit /last30days calls or when the task genuinely needs broad multi-source social-sentiment research (what people are saying across Reddit, X, YouTube, HN, GitHub, Polymarket in the last 30 days) — never for ordinary web searches, doc lookups, or single-page fetches. Python engine does the scraping in Bash (keyless sources work with no API keys); the model only synthesizes.",
+      "longDescription": "Broad multi-source social-sentiment research: a Python engine scrapes Reddit, X, YouTube, Hacker News, GitHub, Polymarket and the open web for the last 30 days, and the model only synthesizes the result. Keyless sources work with no API keys.",
+      "category": "research",
+      "version": "3.18.4",
+      "dirHash": "sha256:8e65fb0397f4af22be9562d76c1def2fb7de6173123e693de68aa5df0cbfca5a",
+      "sizeBytes": 2196829,
+      "fileCount": 109,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/mvanhorn/last30days-skill",
+        "author": "Matt Van Horn (mvanhorn)"
+      },
+      "requires": {
+        "bins": [
+          "python3"
+        ],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/last30days"
+    },
+    {
+      "id": "minimalist-ui",
+      "displayName": "Minimalist Ui",
+      "description": "Clean editorial-style minimalist interfaces — hue-tinted monochrome palette outside the warm band, typographic contrast, flat bento grids, muted pastel accents, no gradients and no heavy shadows.",
+      "longDescription": "Name: Premium Utilitarian Minimalism & Editorial UI Description: An advanced frontend engineering directive for generating highly refined, ultra-minimalist, \"document-style\" web interfaces analogous to top-tier workspace platforms. This protocol strictly enforces a high-contrast hue-tinted monochrome palette (outside the cream/sand/beige warm band), bespoke typographic hierarchies, meticulous structural macro-whitespace, bento-grid layouts, and an ultra-flat component architecture with deliberate muted pastel accents. It actively rejects standard generic SaaS design trends.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:985f0f0c637798e216f49462fbade3e6e1f3cab9fc8c475ca6c9cbb7b0981d4b",
+      "sizeBytes": 10922,
+      "fileCount": 2,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/minimalist-ui"
+    },
+    {
+      "id": "pre-release-review",
+      "displayName": "Pre Release Review",
+      "description": "Use when the user says \"ship it\", \"release\", \"submit\", \"deploy\", \"push to production\", before any production push, or after any large diff. Mandatory independent review pass — never skip because \"the diff looks fine\".",
+      "longDescription": "An independent fresh-eyes review before anything ships. This is the cheapest bug-fix window that exists — every time it has run it has caught real shipping bugs (unsolicited permission prompts, silent data mutation); every time it was skipped, something escaped. **The author is blind to their own bugs — the review must be a separate agent, not the same context re-reading its diff.**",
+      "category": "engineering",
+      "version": "1.0.0",
+      "dirHash": "sha256:ab830aaa15699e79bfd172884a79fbcbb3c19e6b8f029708e72219f4a6b920fd",
+      "sizeBytes": 3485,
+      "fileCount": 1,
+      "license": "Shared",
+      "source": {
+        "type": "first-party",
+        "url": "https://github.com/pow3rcycle/claude-skills-library",
+        "author": ""
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/pre-release-review"
+    },
+    {
+      "id": "redesign-existing-projects",
+      "displayName": "Redesign Existing Projects",
+      "description": "Upgrade existing websites and apps to premium quality without breaking functionality — audits current design, removes generic AI patterns, applies high-end standards; works with any CSS setup.",
+      "longDescription": "When applied to an existing project, follow this sequence:",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:733ab5a8f46ca4a98fc4cff4ddeea1cbdc544b186e6d5ee750a2a3b1af7e5a5e",
+      "sizeBytes": 16354,
+      "fileCount": 2,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/redesign-existing-projects"
+    },
+    {
+      "id": "safe-data-write",
+      "displayName": "Safe Data Write",
+      "description": "Use BEFORE any write, migration, or deletion touching precious user data — data stores, schemas, user-owned files (Excel workbooks, databases, documents). User data is sacred; these rules were learned from shipped data-loss bugs.",
+      "longDescription": "Before touching a store/schema/file that user data lives in, know the migration path and the rollback story. If you can't state both, stop and design them first.",
+      "category": "engineering",
+      "version": "1.0.0",
+      "dirHash": "sha256:dc319faa9cd5ee92818ed8d6135d3aad2c55437d03bf06123e86182cabb62fe2",
+      "sizeBytes": 2996,
+      "fileCount": 1,
+      "license": "Shared",
+      "source": {
+        "type": "first-party",
+        "url": "https://github.com/pow3rcycle/claude-skills-library",
+        "author": ""
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/safe-data-write"
+    },
+    {
+      "id": "security-pass",
+      "displayName": "Security Pass",
+      "description": "Use when touching auth, API keys, secrets, RLS/policies, payment or personal data, any new endpoint that writes, or live backends — and before any release. Security and secrets checklist; every rule traces to a real production finding.",
+      "longDescription": "Security passes are one of the few places where spending extra model budget is always justified. Run as a focused pass (mid model; **strong** when the diff touches data migration, auth, or payment/personal data).",
+      "category": "engineering",
+      "version": "1.0.0",
+      "dirHash": "sha256:66543f69054979fafdd60703e2982614f9cb9d56bfd8abfb7bf6d2aa6e0aa16a",
+      "sizeBytes": 3475,
+      "fileCount": 1,
+      "license": "Shared",
+      "source": {
+        "type": "first-party",
+        "url": "https://github.com/pow3rcycle/claude-skills-library",
+        "author": ""
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/security-pass"
+    },
+    {
+      "id": "stitch-design-taste",
+      "displayName": "Stitch Design Taste",
+      "description": "Generates agent-friendly DESIGN.md files for Google Stitch that enforce premium, anti-generic UI standards — typography, color, asymmetric layout, micro-motion, performance.",
+      "longDescription": "This skill generates `DESIGN.md` files optimized for Google Stitch screen generation. It translates the battle-tested anti-slop frontend engineering directives into Stitch's native semantic design language — descriptive, natural-language rules paired with precise values that Stitch's AI agent can interpret to produce premium, non-generic interfaces.",
+      "category": "design",
+      "version": "1.0.0",
+      "dirHash": "sha256:8282427c7a655e8c69df4be268e97d1273288bbf359f913def10bc26396e9ce2",
+      "sizeBytes": 27101,
+      "fileCount": 3,
+      "license": "MIT",
+      "source": {
+        "type": "third-party",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "author": "Leonxlnx"
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/stitch-design-taste"
+    },
+    {
+      "id": "verify-work",
+      "displayName": "Verify Work",
+      "description": "Use BEFORE claiming work is \"done\", \"complete\", \"working\", or \"fixed\", and before writing a handoff or completion summary. Verification ladder plus the honest Verified/NOT-verified ledger — \"verified\" is a claim about evidence, not confidence.",
+      "longDescription": "Every project has caught real bugs at the verification stage that looked fine in the diff. A green build is the floor, never the finish line.",
+      "category": "engineering",
+      "version": "1.0.0",
+      "dirHash": "sha256:296dccd9cfdee1e4fc7ca179d072f3810fb3025f6bc44d967936437bc477737d",
+      "sizeBytes": 2879,
+      "fileCount": 1,
+      "license": "Shared",
+      "source": {
+        "type": "first-party",
+        "url": "https://github.com/pow3rcycle/claude-skills-library",
+        "author": ""
+      },
+      "requires": {
+        "bins": [],
+        "npmGlobal": [],
+        "notes": ""
+      },
+      "hidden": false,
+      "dependsOn": [],
+      "path": "catalog/verify-work"
+    }
+  ]
+}
