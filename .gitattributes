@@ -1,0 +1,4 @@
+# Normalize every text file to LF, in the repo and in the working tree.
+# This is load-bearing: manifest.json's dirHash is computed over working-tree bytes
+# and must equal the bytes a client gets from a GitHub tarball. See CONTRIBUTING.md.
+* text=auto eol=lf
