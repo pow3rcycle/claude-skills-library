@@ -97,10 +97,14 @@ These two skill folders are thin instruction stubs. The actual tools are **npm p
 installed globally by the user** — no third-party program code is vendored into this
 repo, only the `SKILL.md` that tells Claude how to drive it.
 
-| Skill | Upstream repo | Author | License of the stub | Install |
+| Skill | Upstream repo | Copyright | License | Install |
 |---|---|---|---|---|
-| `agent-browser` | https://github.com/vercel-labs/agent-browser | Vercel Labs | Apache-2.0 | `npm install -g agent-browser && agent-browser install` |
-| `defuddle` | https://github.com/kepano/obsidian-skills | kepano | MIT | `npm install -g defuddle` |
+| `agent-browser` | https://github.com/vercel-labs/agent-browser | Copyright 2025 Vercel Inc. | Apache-2.0 | `npm install -g agent-browser && agent-browser install` |
+| `defuddle` | https://github.com/kepano/obsidian-skills | Copyright (c) 2026 Steph Ango (@kepano) | MIT | `npm install -g defuddle` |
+
+The stubs are still covered by their upstream licenses, so both upstream `LICENSE` files
+were fetched verbatim from the GitHub API on 2026-08-19 and committed at
+`catalog/agent-browser/LICENSE` and `catalog/defuddle/LICENSE`.
 
 `agent-browser`'s stub is deliberately minimal: it points at `agent-browser skills get
 core`, so the usage instructions always match the installed CLI version rather than going
@@ -113,9 +117,10 @@ stale in this repo.
 `apply-richformat`, `commissioning-logger`, `pre-release-review`, `safe-data-write`,
 `security-pass`, `verify-work`.
 
-Written for this catalog. Published in the manifest as `license: "Shared"`,
-`source.type: "first-party"`. A formal open-source license is still to be decided — see
-the licensing section of `README.md`.
+Written for this catalog. **MIT, © 2026 Mehedi Hasan** — the repo's root `LICENSE` covers
+them, along with `tools/` and the documentation, so these folders carry no `LICENSE` file
+of their own. Published in the manifest as `license: "MIT"`, `source.type: "first-party"`,
+`source.author: "Mehedi Hasan"`.
 
 ---
 

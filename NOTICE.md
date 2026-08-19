@@ -12,7 +12,7 @@ each skill folder.
 
 **Included at:** `catalog/impeccable/`
 **Origin:** https://github.com/pbakaus/impeccable
-**Copyright:** Copyright 2026 Paul Bakaus
+**Copyright:** Copyright 2025 Paul Bakaus
 **License:** Apache License, Version 2.0 — full text at `catalog/impeccable/LICENSE`,
 also available at http://www.apache.org/licenses/LICENSE-2.0
 
@@ -35,13 +35,16 @@ redistribution of this material.
 
 **Included at:** `catalog/agent-browser/`
 **Origin:** https://github.com/vercel-labs/agent-browser
-**Copyright:** Copyright 2026 Vercel, Inc.
-**License:** Apache License, Version 2.0 — http://www.apache.org/licenses/LICENSE-2.0
+**Copyright:** Copyright 2025 Vercel Inc.
+**License:** Apache License, Version 2.0 — full text at `catalog/agent-browser/LICENSE`,
+also available at http://www.apache.org/licenses/LICENSE-2.0
 
 Only the skill's instruction file is included. The `agent-browser` program itself is
 **not** redistributed here — it is an npm package the user installs directly
 (`npm install -g agent-browser`), and its own license and notices travel with that
 package.
+
+You must retain this notice and the `LICENSE` file in any redistribution of this material.
 
 ---
 
