@@ -1,0 +1,28 @@
+name: manifest
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-manifest:
+    name: manifest.json is in sync with catalog/
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Rebuild manifest
+        run: node tools/build-manifest.mjs
+
+      - name: Fail on drift
+        run: |
+          if ! git diff --exit-code manifest.json; then
+            echo "::error file=manifest.json::manifest.json is out of date - run tools/build-manifest.mjs and commit"
+            exit 1
+          fi
