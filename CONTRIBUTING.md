@@ -45,8 +45,9 @@
 5. **Record provenance.** Third-party skills: add a row to `SOURCES.md`, copy the
    upstream `LICENSE` into the skill folder, and add an entry to the `PROVENANCE` table
    in `tools/build-manifest.mjs`. Apache-2.0 code also needs a line in `NOTICE.md`.
-   First-party skills need nothing — they default to `license: "Shared"`,
-   `source.type: "first-party"`.
+   First-party skills need nothing — they default to `license: "MIT"`,
+   `source.type: "first-party"`, and are covered by the repo's root `LICENSE`, so they
+   carry no `LICENSE` file of their own.
 
 6. **Rebuild the manifest and commit both:**
 

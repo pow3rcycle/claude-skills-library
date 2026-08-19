@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-19T20:07:12.126Z",
+  "generatedAt": "2026-08-19T21:19:07.878Z",
   "catalog": {
     "name": "claude-skills-library",
     "url": "https://github.com/pow3rcycle/claude-skills-library"
@@ -13,9 +13,9 @@
       "longDescription": "Fast browser automation CLI for AI agents. Chrome/Chromium via CDP with accessibility-tree snapshots and compact `@eN` element refs.",
       "category": "utility",
       "version": "1.0.0",
-      "dirHash": "sha256:d8faaa7ec0ffcae866f363f92c90179e9fde23a98c6b8402f2fe8db3418a3608",
-      "sizeBytes": 2682,
-      "fileCount": 1,
+      "dirHash": "sha256:9a5763ddb24829ee9b64409a25b4ec8ad2ae2df4e9ccd90d3cb9529252fe2f2d",
+      "sizeBytes": 13613,
+      "fileCount": 2,
       "license": "Apache-2.0",
       "source": {
         "type": "third-party",
@@ -43,11 +43,11 @@
       "dirHash": "sha256:ea10e42b4ac845e2babe91b924a0aa1684d4fb42d8a1eca015d2c7a8bf27ed0f",
       "sizeBytes": 7892,
       "fileCount": 1,
-      "license": "Shared",
+      "license": "MIT",
       "source": {
         "type": "first-party",
         "url": "https://github.com/pow3rcycle/claude-skills-library",
-        "author": ""
+        "author": "Mehedi Hasan"
       },
       "requires": {
         "bins": [],
@@ -93,11 +93,11 @@
       "dirHash": "sha256:ea86b5fb019ec7843347bc4fcd7c41143e203f98a360f9ad6b7bae8c15b6fd7e",
       "sizeBytes": 23115,
       "fileCount": 5,
-      "license": "Shared",
+      "license": "MIT",
       "source": {
         "type": "first-party",
         "url": "https://github.com/pow3rcycle/claude-skills-library",
-        "author": ""
+        "author": "Mehedi Hasan"
       },
       "requires": {
         "bins": [],
@@ -115,9 +115,9 @@
       "longDescription": "Use Defuddle CLI to extract clean readable content from web pages. Prefer over WebFetch for standard web pages — it removes navigation, ads, and clutter, reducing token usage.",
       "category": "utility",
       "version": "1.0.0",
-      "dirHash": "sha256:6e5c9a68fae6878fde7c31f215669537a7b1d98b4e1c5a105218c4802ec59709",
-      "sizeBytes": 955,
-      "fileCount": 1,
+      "dirHash": "sha256:05b72f99fb33dceea805c3119141ce29ce98ab7c296a91aecd7be62162538d00",
+      "sizeBytes": 2032,
+      "fileCount": 2,
       "license": "MIT",
       "source": {
         "type": "third-party",
@@ -478,11 +478,11 @@
       "dirHash": "sha256:08591a9e9111d4547d23b5b668fe3ca3e6f77569d479a14219822932a35ef0a3",
       "sizeBytes": 3485,
       "fileCount": 1,
-      "license": "Shared",
+      "license": "MIT",
       "source": {
         "type": "first-party",
         "url": "https://github.com/pow3rcycle/claude-skills-library",
-        "author": ""
+        "author": "Mehedi Hasan"
       },
       "requires": {
         "bins": [],
@@ -528,11 +528,11 @@
       "dirHash": "sha256:8829b983912e4c8f8c11672df50ddb266e9e705a32c6b6a5a306411562e7da70",
       "sizeBytes": 2996,
       "fileCount": 1,
-      "license": "Shared",
+      "license": "MIT",
       "source": {
         "type": "first-party",
         "url": "https://github.com/pow3rcycle/claude-skills-library",
-        "author": ""
+        "author": "Mehedi Hasan"
       },
       "requires": {
         "bins": [],
@@ -553,11 +553,11 @@
       "dirHash": "sha256:e89884e53d410b670a2c3646b9b63c147f644e53c3d9a948ad0fdad5832dd7b9",
       "sizeBytes": 3475,
       "fileCount": 1,
-      "license": "Shared",
+      "license": "MIT",
       "source": {
         "type": "first-party",
         "url": "https://github.com/pow3rcycle/claude-skills-library",
-        "author": ""
+        "author": "Mehedi Hasan"
       },
       "requires": {
         "bins": [],
@@ -603,11 +603,11 @@
       "dirHash": "sha256:72a590c84384637cc9b2a47ea372c9ac09f7965346412da13e161be32487b82a",
       "sizeBytes": 2879,
       "fileCount": 1,
-      "license": "Shared",
+      "license": "MIT",
       "source": {
         "type": "first-party",
         "url": "https://github.com/pow3rcycle/claude-skills-library",
-        "author": ""
+        "author": "Mehedi Hasan"
       },
       "requires": {
         "bins": [],

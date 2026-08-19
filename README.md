@@ -18,14 +18,19 @@ methodology and tooling, safe to share and safe to keep anywhere.
 
 ### The easy way — the Skills Hub app
 
-[**Skills Hub**](https://github.com/pow3rcycle/claude-skills-hub) is a small desktop app
-that reads this repo's catalog, shows you what's available, and installs or updates the
-skills you pick. It handles versions, updates and removal, so you never hand-copy a
-folder or wonder which copy is current.
+**Skills Hub** is a small desktop app that reads this repo's catalog, shows you what's
+available, and installs or updates the skills you pick. It handles versions, updates and
+removal, so you never hand-copy a folder or wonder which copy is current.
 
-1. Install Skills Hub.
+1. **[Download Skills Hub from the releases page](https://github.com/pow3rcycle/claude-skills-hub/releases)**
+   — from the newest release, download the `.exe` setup file on Windows or the `.dmg` on
+   macOS, open it, and follow the prompts.
 2. Browse the catalog, tick the skills you want, install.
 3. Start a new Claude Code session. That's it.
+
+> **Windows will warn you the first time.** The app is not code-signed, so SmartScreen
+> shows a blue "Windows protected your PC" box. Click **More info**, then **Run anyway**.
+> On macOS, right-click the app and choose **Open**, then **Open** again.
 
 ### The manual way — no app required
 
@@ -76,15 +81,20 @@ the skill's own rules simply apply. Nothing breaks, and no rule is lost.
 
 ## Licensing
 
-**Third-party skills** keep their upstream licenses (MIT and Apache-2.0). Each such
-folder ships its own `LICENSE`; the full provenance table — repo, author, license —
-is in [`SOURCES.md`](SOURCES.md), and the Apache-2.0 attribution requirements are in
+**First-party content is MIT** — see [`LICENSE`](LICENSE), © 2026 Mehedi Hasan. That
+covers this repo's tooling (`tools/`), its documentation, and the six first-party skills:
+`apply-richformat`, `commissioning-logger`, `pre-release-review`, `safe-data-write`,
+`security-pass`, `verify-work`. Use them, fork them, ship them — just keep the copyright
+notice.
+
+**Third-party skills keep their own upstream licenses** (MIT and Apache-2.0), which the
+root LICENSE does not override. Every third-party skill folder ships its own `LICENSE`
+file; the full provenance table — repo, author, license, vendored commit — is in
+[`SOURCES.md`](SOURCES.md), and the Apache-2.0 attribution requirements are in
 [`NOTICE.md`](NOTICE.md).
 
-**First-party skills** (the engineering-practice group, shown as `"license": "Shared"`
-in the manifest) are © the author, shared for use as-is. A formal open-source license
-for them is still to be decided — treat them as "use it, adapt it, no warranty" until
-this section says otherwise, and check back before redistributing them.
+Each skill's effective license is also published per-entry in `manifest.json` under
+`license` and `source`.
 
 ---
 

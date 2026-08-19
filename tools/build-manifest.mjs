@@ -131,9 +131,10 @@ function categoryFor(id) {
 // --- provenance -----------------------------------------------------------
 // Mirrors SOURCES.md at the repo root. SOURCES.md is the human-readable copy;
 // this table is what the manifest publishes. Keep the two in step.
+// First-party skills are MIT, covered by the repo's root LICENSE file.
 const FIRST_PARTY = {
-  license: 'Shared',
-  source: { type: 'first-party', url: CATALOG_META.url, author: '' },
+  license: 'MIT',
+  source: { type: 'first-party', url: CATALOG_META.url, author: 'Mehedi Hasan' },
 };
 const PROVENANCE = {
   'agent-browser': {
