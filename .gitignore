@@ -1,2 +1,8 @@
 node_modules/
+
+# OS junk. These must never reach catalog/: they would ship inside the download
+# tarball, and the dirHash contract skips them by name — so a stray one makes
+# what the app verifies differ from what it actually received.
 .DS_Store
+Thumbs.db
+desktop.ini

@@ -29,6 +29,9 @@
    `~/.claude/skills/` verbatim, so it must not contain:
    - `node_modules/`, `__pycache__/`, `.venv/`, build output
    - dev-only `tests/` fixtures
+   - symlinks — the hash contract skips them, so one would silently not travel
+   - OS junk: `.DS_Store`, `Thumbs.db`, `desktop.ini` (git-ignored, and skipped by the
+     hash contract — but keep them out of the tree rather than relying on that)
    - anything secret — keys, tokens, cookies, internal hostnames, customer names
    - anything personal — real names, machine paths, private project references
 
@@ -71,9 +74,31 @@ It is **generated**. Never edit it by hand.
   change**, so re-running it is a no-op and `git diff --exit-code manifest.json` is a
   reliable drift check.
 - `dirHash` is a reproducible content hash of the skill folder, so a client can verify
-  that what it downloaded is what the manifest described. The exact recipe is documented
-  in the header comment of `tools/build-manifest.mjs` — treat it as a published contract:
-  changing it invalidates every hash and every client's integrity check.
+  that what it downloaded is what the manifest described.
+
+### The `dirHash` contract
+
+**The Skills Hub app owns this recipe.** The authoritative implementation is
+`claude-skills-hub/src/main/lib/dirHash.ts` (`hashDirDetailed`); the builder here mirrors
+it and its header comment documents it step by step. Both sides must agree exactly — if
+they diverge, every skill shows as "update available" in the app.
+
+The recipe is intentionally reproducible by hand:
+
+```bash
+cd catalog/<id>
+find . -type f | sed 's|^\./||' | LC_ALL=C sort | xargs -d '\n' sha256sum | sha256sum
+```
+
+That prints the hex; the manifest stores it prefixed with `sha256:`. Two caveats when
+checking by hand: on Windows `sha256sum` defaults to binary mode and prints
+`<hex> *path` — the contract wants two spaces, so rewrite the marker
+(`sed 's/^\([0-9a-f]\{64\}\) \*/\1  /'`) — and `find` does not apply the contract's
+exclusions, so the shorthand only matches on a tree with no symlinks and no OS junk in it
+(which is the only kind of tree that should be committed).
+
+Changing the recipe invalidates every hash and every installed client's integrity check.
+It is a breaking change, coordinated with the app — not a refactor.
 
 ## Line endings
 

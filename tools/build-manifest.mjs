@@ -33,23 +33,38 @@
  *   }
  *
  * ---------------------------------------------------------------------------
- * dirHash — the reproducible content hash (the app recomputes this)
+ * dirHash — the interop contract with the Skills Hub app
  * ---------------------------------------------------------------------------
- * dirHash is "sha256:" + hex digest of a single SHA-256 stream built as follows:
+ * THE APP OWNS THIS RECIPE. The authoritative implementation lives in the
+ * sibling repo at:
  *
- *   1. Collect EVERY file under catalog/<id>/, recursively. No exclusions are
- *      applied here — what is committed is what is hashed. (Files that must not
- *      ship, such as node_modules or __pycache__, are kept out of the repo in
- *      the first place; see CONTRIBUTING.md.)
- *   2. Express each path relative to catalog/<id>/ using FORWARD SLASHES.
- *   3. Sort those relative paths ascending by UTF-8 byte order (Buffer.compare),
+ *     claude-skills-hub/src/main/lib/dirHash.ts   (hashDirDetailed)
+ *
+ * Both sides must produce the same string for the same tree, or every skill
+ * shows up in the app as "update available". If that file ever changes, this
+ * one changes with it — and every hash in manifest.json is invalidated, so it
+ * is a breaking change for every installed client.
+ *
+ * The recipe is deliberately reproducible by hand with `sha256sum` and `sort`:
+ *
+ *   1. Walk catalog/<id>/ recursively. REGULAR FILES ONLY:
+ *        - directories carry no content of their own;
+ *        - symlinks are skipped (a catalog skill must never contain one);
+ *        - the OS junk files in IGNORED_NAMES (.DS_Store, Thumbs.db,
+ *          desktop.ini) are skipped, at every depth, by exact name.
+ *      Anything skipped here is also excluded from fileCount and sizeBytes —
+ *      those three numbers always describe the same set of files.
+ *   2. Relative path = POSIX separators ("/"), no leading "./".
+ *   3. Sort the relative paths ascending by UTF-8 byte order (Buffer.compare),
  *      NOT by locale collation.
- *   4. For each file, in that order, feed the hash:
- *          <relPath as UTF-8> 0x00 <byteLength as decimal ASCII> 0x00 <file bytes>
+ *   4. For each file, in that order, emit one line:
+ *          <sha256-hex of the file's raw bytes><two spaces><relPath>\n
+ *      i.e. exactly the format `sha256sum` prints.
+ *   5. dirHash = "sha256:" + sha256-hex of those lines concatenated.
  *
- * The length field makes the encoding unambiguous, so no combination of paths
- * and contents can collide with a different file list. The result is stable
- * across platforms and independent of mtimes, permissions and directory order.
+ * File bytes are hashed raw, so LINE ENDINGS MATTER: the repo must check out
+ * LF (`* text=auto eol=lf`, see .gitattributes) or hashes differ per platform.
+ * The result is independent of mtimes, permissions and directory order.
  *
  * ---------------------------------------------------------------------------
  * DETERMINISM
@@ -69,8 +84,8 @@
  */
 
 import { createHash } from 'node:crypto';
-import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
-import { join, relative, dirname, sep } from 'node:path';
+import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const REPO_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -213,33 +228,45 @@ const OVERRIDES = {
 
 // --- helpers --------------------------------------------------------------
 
-/** Every file under `dir`, as paths relative to `dir`, POSIX separators, byte-sorted. */
+/**
+ * OS junk that must never reach a user's skills folder or a hash.
+ * Mirrors IGNORED_NAMES in claude-skills-hub/src/main/lib/dirHash.ts — keep in step.
+ */
+const IGNORED_NAMES = new Set(['.DS_Store', 'Thumbs.db', 'desktop.ini']);
+
+/**
+ * The hashable files under `dir`: relative POSIX paths, byte-sorted, with
+ * symlinks and IGNORED_NAMES excluded at every depth. Step 1-3 of the recipe.
+ */
 function listFiles(dir) {
   const out = [];
-  (function walk(current) {
+  (function walk(current, rel) {
     for (const entry of readdirSync(current, { withFileTypes: true })) {
-      const full = join(current, entry.name);
-      if (entry.isDirectory()) walk(full);
-      else if (entry.isFile()) out.push(relative(dir, full).split(sep).join('/'));
+      if (IGNORED_NAMES.has(entry.name)) continue;
+      if (entry.isSymbolicLink()) continue;
+      const childRel = rel ? `${rel}/${entry.name}` : entry.name;
+      if (entry.isDirectory()) walk(join(current, entry.name), childRel);
+      else if (entry.isFile()) out.push(childRel);
     }
-  })(dir);
+  })(dir, '');
   return out.sort((a, b) => Buffer.compare(Buffer.from(a, 'utf8'), Buffer.from(b, 'utf8')));
 }
 
-/** dirHash + sizeBytes + fileCount. See the header comment for the exact recipe. */
+/**
+ * dirHash + sizeBytes + fileCount. Steps 4-5 of the recipe: one sha256sum-format
+ * line per file (`<hex><two spaces><relPath>\n`), concatenated and hashed.
+ * `relFiles` must already be filtered and sorted by listFiles().
+ */
 function hashDirectory(dir, relFiles) {
-  const hash = createHash('sha256');
+  const outer = createHash('sha256');
   let sizeBytes = 0;
   for (const rel of relFiles) {
-    const bytes = readFileSync(join(dir, rel));
-    hash.update(rel, 'utf8');
-    hash.update(Buffer.from([0]));
-    hash.update(String(bytes.length), 'utf8');
-    hash.update(Buffer.from([0]));
-    hash.update(bytes);
+    const bytes = readFileSync(join(dir, ...rel.split('/')));
+    const hex = createHash('sha256').update(bytes).digest('hex');
+    outer.update(`${hex}  ${rel}\n`, 'utf8');
     sizeBytes += bytes.length;
   }
-  return { dirHash: `sha256:${hash.digest('hex')}`, sizeBytes, fileCount: relFiles.length };
+  return { dirHash: `sha256:${outer.digest('hex')}`, sizeBytes, fileCount: relFiles.length };
 }
 
 /**
